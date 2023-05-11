@@ -12,15 +12,17 @@ Dopo 30 secondi i numeri scompaiono
 
 // variabili
 
-let numberToRemember = arrayOfRandomNumber(1, 30, 5);
+    // generatore di numeri random
+    let numberToRemember = arrayOfRandomNumber(1, 30, 5);
 
-console.log(numberToRemember);
+    // debug
+    console.log(numberToRemember);
 
-const answer = [];
+    // array risposta utente
+    const answer = [];
 
-console.log(answer);
-
-const correctAnswers = [];
+    // array di risposte utente corrette
+    const correctAnswers = [];
 
 
 
@@ -55,8 +57,6 @@ for (let i = 0; i < numberToRemember.length; i++) {
             const question = parseInt(prompt(i+1 + "# which number was showed?")) ;
 
             answer.push(question);
-
-            console.log(answer);
             
         }
 
@@ -73,9 +73,8 @@ submit.onclick = function() {
         if (numberToRemember.includes(answer[i])) {
 
             correctAnswers.push(answer[i])
-
-            console.log(correctAnswers, correctAnswers.length);
             
+            document.querySelector("#answer-container span").append(` ${answer[i]}`);
         }
         
     }
@@ -83,6 +82,7 @@ submit.onclick = function() {
     let show = correctAnswers.length
 
     alert ("you remembered " + show + " correct numbers")
+
 
 }
 

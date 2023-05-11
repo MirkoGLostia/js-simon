@@ -5,7 +5,8 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 20px;
+    text-align: center;
 }
 
 
@@ -13,10 +14,6 @@
 /******
  *MAIN*
  ******/
-
-div {
-    text-align: center;
-}
 
 .time-up {
     display: none;
