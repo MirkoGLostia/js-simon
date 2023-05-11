@@ -16,16 +16,23 @@ let numberToRemember = arrayOfRandomNumber(1, 30, 5);
 
 console.log(numberToRemember);
 
-const answer = []
+const answer = [];
 
 console.log(answer);
+
+const correctAnswers = [];
+
+
+
+
+
+
+
 
 // inserire numeri nella pagina
 for (let i = 0; i < numberToRemember.length; i++) {
     
-    const number = numberToRemember[i];
-
-    const toShow = document.querySelector("#memory-container span").append(` ${number}`);
+    document.querySelector("#memory-container span").append(` ${numberToRemember[i]}`);
 
 }
 
@@ -43,9 +50,9 @@ for (let i = 0; i < numberToRemember.length; i++) {
     // timer to input the answer
     setTimeout(function() {
 
-        for (let i = 1; i < 6; i++) {
+        for (let i = 0; i < 5; i++) {
 
-            const question = prompt(i + "# which number was showed?");
+            const question = parseInt(prompt(i+1 + "# which number was showed?")) ;
 
             answer.push(question);
 
@@ -53,9 +60,34 @@ for (let i = 0; i < numberToRemember.length; i++) {
             
         }
 
-        console.log(answer);
-
     }, 11500);
+
+
+
+// buttons
+
+submit.onclick = function() {
+    
+    for (let i = 0; i < answer.length; i++) {
+       
+        if (numberToRemember.includes(answer[i])) {
+
+            correctAnswers.push(answer[i])
+
+            console.log(correctAnswers, correctAnswers.length);
+            
+        }
+        
+    }
+
+    let show = correctAnswers.length
+
+    alert ("you remembered " + show + " correct numbers")
+
+}
+
+
+
 
 
 
@@ -89,3 +121,4 @@ function arrayOfRandomNumber (min, max, tot) {
     return containerNum;
 
 }
+
