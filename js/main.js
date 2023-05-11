@@ -14,6 +14,13 @@ Dopo 30 secondi i numeri scompaiono
 
 let numberToRemember = arrayOfRandomNumber(1, 30, 5);
 
+console.log(numberToRemember);
+
+const answer = []
+
+console.log(answer);
+
+// inserire numeri nella pagina
 for (let i = 0; i < numberToRemember.length; i++) {
     
     const number = numberToRemember[i];
@@ -23,9 +30,32 @@ for (let i = 0; i < numberToRemember.length; i++) {
 }
 
 
-setTimeout(function() {
-    document.getElementById("memory-container").classList.add("time-up")
-}, 30000);
+// timer
+
+    // timer for hide the numbers
+    setTimeout(function() {
+
+        document.getElementById("memory-container").classList.add("time-up")
+
+    }, 10000);
+
+
+    // timer to input the answer
+    setTimeout(function() {
+
+        for (let i = 1; i < 6; i++) {
+
+            const question = prompt(i + "# which number was showed?");
+
+            answer.push(question);
+
+            console.log(answer);
+            
+        }
+
+        console.log(answer);
+
+    }, 11500);
 
 
 
